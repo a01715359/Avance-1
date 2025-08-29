@@ -186,7 +186,9 @@ Si resp_10 = C) Hi-hat
     Nota = nota + 1
 Sino Nota + 0
 
-Mientras Nota <= 6
+Mientras: 
+	Nota <= 6
     Imprime “Lo siento. Vuelve a tomar el examen para finalizar el curso”
+	repetir "Examen Final"
  Si Nota  >  6
    EF Imprime “¡Felicitaciones resp_nom, haz finalizado correctamente el curso”
