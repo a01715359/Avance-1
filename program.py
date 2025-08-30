@@ -1,3 +1,4 @@
+# #AVANCE 2: Para el avance 2 seleccioné añadir operaciones aritméticas al algoritmo de "Examen Final"
 Nota = 0
 print("Pregunta 1: ¿Cuál de las siguientes partes NO forma parte de una batería estándar? \
 A) Bombo \
