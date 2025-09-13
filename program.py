@@ -1,4 +1,5 @@
-#AVANCE 3: Para el avance 3 seleccioné añadir funciones al algoritmo de "Examen Final"
+
+#AVANCE 4: Para el avance 4 seleccioné añadir los if's al mismo código del "Examen Final"
 Nota = 0
 def examen(pregunta, respuesta_correcta):
     respuesta = str(input(pregunta))
