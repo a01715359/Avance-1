@@ -1,3 +1,4 @@
+#Para el avance 7 añadí listas anidades (matrices) para la selección de los temas dominados en el curso.
 Nombre = input('¡Bienvenido al curso! ¿Cuál es tu nombre? \n')
 Conocimiento = input('Hola ' + Nombre + ', ¿Tienes conocimientos previos de batería?').lower()
 
