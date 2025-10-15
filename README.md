@@ -74,15 +74,7 @@ Dar lección “Filis”
     Imprime “Tarola:     0  0  0  0  0  0  0  0
                     Hi-Hats:  x      x      x      x”
     Imprime “Si te fijas, esta vez los Hi-Hats están debajo, lo que quiere decir que ya no usarás las manos para tocarlos, sino que está vez tu pie izquierdo ya no estará presionando el pedal siempre. Por otro lado, en este fill la tarola es la constante, para ello, empieza con la mano derecha y luego ve con la izquierda. Observa como los Hi-Hats únicamente los tocas cuando utilizas tu mano derecha, tener esto claro te ayudará con tu coordinación. Una vez domines el fill, incorpóralo con cada uno de los drum keys estudiados. Juega y crea tus propias combinaciones, como hacer cuatro veces el Rock 1, luego una vez el Rock 4 y por último el fill dos veces; o todos una vez; o hacer Rock 1, fill, Rock 2, fill, Rock 3, fill, Rock 4, fill… ¡Tu decides!”
-Fin lección “Filis”
-
-Dar lección “Another one bites the dust de Queen”
-    Imprime “En la lección de hoy aprenderás a tocar tu primera canción. Tómate en analizar la partitura y ve practicando por partes, no pasa nada si te equivocas en un compás.”
-    Imprime “Tiempo:  1  &   2   &   3   &   4   &
-                     Hi-Hats:  x   x   x   x   x   x    x   x
-                     Tarola:              0                  0
-                     Bombo:  0        0   0        0   0   0”
-Fin lección ““Another one bites the dust de Queen”
+Fin lección “Fills”
 
 Dar lección “Examen Final”
 Nota = 0
