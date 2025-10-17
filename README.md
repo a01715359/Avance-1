@@ -1,6 +1,6 @@
 # Avance-1
 Contexto:
-Mi proyecto será un curso de principiantes que enseñaría cómo tocar la batería. Explicaría paso a paso, desde lo más básico, como cuáles son las partes que conforman una batería, cómo sostener las baquetas o cómo leer las partituras de la batería; para finalmente enseñar cómo tocar la canción “Another one bites the Dust” de Queen en la batería. Pienso que sería interesante porque sería muy útil para personas que desean aprender a tocar algún instrumento pero no pueden pagar un curso o simplemente quieren buscar una forma más accesible de hacerlo: a través de un programa.
+Mi proyecto será un curso de principiantes que enseñaría cómo tocar la batería. Explicaría paso a paso, desde lo más básico, como cuáles son las partes que conforman una batería, cómo sostener las baquetas o cómo leer las partituras de la batería; para finalmente dar un examen para ver los conocimientos adquiridos. Pienso que sería interesante porque sería muy útil para personas que desean aprender a tocar algún instrumento pero no pueden pagar un curso o simplemente quieren buscar una forma más accesible de hacerlo: a través de un programa.
 
 EO
 Imprime “¡Bienvenido al curso! ¿Cuál es tu nombre?”
