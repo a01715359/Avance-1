@@ -1,11 +1,15 @@
 # Avance-1
 Contexto:
-Mi proyecto será un curso de principiantes que enseñaría cómo tocar la batería. Explicaría paso a paso, desde lo más básico, como cuáles son las partes que conforman una batería, cómo sostener las baquetas o cómo leer las partituras de la batería; para finalmente dar un examen para ver los conocimientos adquiridos. Pienso que sería interesante porque sería muy útil para personas que desean aprender a tocar algún instrumento pero no pueden pagar un curso o simplemente quieren buscar una forma más accesible de hacerlo: a través de un programa.
+Mi proyecto será un curso de principiantes que enseñaría cómo tocar la batería. Explicaría paso a paso, desde lo más básico, como cuáles son las partes que conforman una batería, cómo sostener las baquetas o cómo leer las partituras de la batería; para finalmente dar un examen para ver los conocimientos adquiridos. Pienso que sería interesante porque sería muy útil para personas que desean aprender a tocar algún instrumento pero no pueden pagar un curso o simplemente quieren buscar una forma más accesible de hacerlo: a través de un programa. 
+
+Para la realización de este proyecto se utilizó la biblioteca webbrowser, que sirve para acceder a URls. Esta fue utilizada con el objetivo de proporcionar ayuda extra (videos) si el usuario no entendía la explicación del curso. Primero accedí a la biblioteca importándola, luego creé una función para acceder a cada video de una lista. Por último utilicé .open() para así abrir cada URL en una nueva página en el navegador predeterminado. 
+
+webbrowser — Controlador de navegador web conveniente — documentación de Python - 3.10.19. (n.d.). https://docs.python.org/es/3.10/library/webbrowser.html 
 
 EO
 Imprime “¡Bienvenido al curso! ¿Cuál es tu nombre?”
 resp_nom = guardar nombre
-Preguntar “¿Tienes conocimientos previos de batería?”
+Imprime “¿Tienes conocimientos previos de batería?”
 resp_con = guardar respuesta
 
 Si res_con = Sí
@@ -13,8 +17,8 @@ Si res_con = Sí
 	    1. Partes de la batería \
 	    2. Cómo agarrar correctamente las baquetas \
 	    3. Cómo leer partituras de batería”
-   
-    val1 = Partes de la batería
+		
+	val1 = Partes de la batería
     val2 = Cómo agarrar correctamente las baquetas
     val3 = Cómo leer partituras de batería
     con_pre = [val1, val2 , val3]
@@ -46,6 +50,22 @@ Dar lección “Primera partitura : Rock 1”
     Imprime “CONSEJO 2: Antes de tocar y una vez hayas leídos analizado y entendido bien la partitura, asígnale un sonido a la tarola y el bombo, ay que estos son los que varían. Puede ser algo como “boom” para el bombo y “tap” para la tarola. Una vez lo tengas, practica instrumento por instrumento, no intentes unirlos todos juntos todavía, intenta dominar cada uno por separado. Luego, añade un sonido con la boca: cuando estés practicando la tarola, ve haciendo el sonido del bombo pero con tu boca, lo mismo cuando vayas a practicar el bombo. Y ahora sí: ¡Estás listo para unirlo todo! Ve al paso que necesites, no intentes acelerarte y recuerda que está bien confundirse.”
 Fin lección “Primera partitura : Rock 1”
 
+Imprime "List@ para la siguiente lección? (responde sí o no)".
+	resp_video = guardar respuesta
+	Si resp_video == 'si'
+		continuar leccion
+	Sino resp_video == 'no'
+		imprime "Te gustaría ver un video del tema?"
+		si respuesta == 'si'
+			mostrar video
+		sino respuesta == 'no'
+			continuar leccion
+		si no
+			imprime 'respuesta invalida. debes decir si sí o si no'
+	si no
+			imprime 'respuesta invalida. debes decir si sí o si no'
+
+			
 Dar lección “Segunda, tercera y cuarta partitura”
     Imprime “En la lección anterior aprendiste a tocar la primera partitura. En esta lección aprenderás a tocar otras nuevas tres.
     Imprime “Rock 2:
@@ -69,13 +89,45 @@ Imprime “CONSEJO: Recuerda primero leer, comprender bien la partitura y practi
 Imprime “RETO: Cuando ya domines las cuatro, intenta unirlos, toca una octava de cada uno seguido. ¡Tu puedes!”
 Fin lección “Segunda, tercera y cuarta partitura”
 
-Dar lección “Filis”
+Imprime "List@ para la siguiente lección? (responde sí o no)".
+	resp_video = guardar respuesta
+	Si resp_video == 'si'
+		continuar leccion
+	Sino resp_video == 'no'
+		imprime "Te gustaría ver un video del tema?"
+		si respuesta == 'si'
+			mostrar video
+		sino respuesta == 'no'
+			continuar leccion
+		si no
+			imprime 'respuesta invalida. debes decir si sí o si no'
+	si no
+			imprime 'respuesta invalida. debes decir si sí o si no'
+
+			
+Dar lección “Fills”
     Imprime “En la lección anterior aprendiste otros tres Drum keys. En esta lección veremos qué son los fills. Los fills no son más que una pequeña desviación del ritmo principal (grooves). Suelen usarse para hacer transiciones entre ritmos o simplemente para darle un toque extra a la composición.”
     Imprime “Tiempo:  1 & 2 & 3 & 4 &
              Tom 1:       0 0     0 0
             Tarola:   x x     x x”
     Imprime “Una vez domines el fill, incorpóralo con cada uno de los drum keys estudiados. Juega y crea tus propias combinaciones, como hacer cuatro veces el Rock 1, luego una vez el Rock 4 y por último el fill dos veces; o todos una vez; o hacer Rock 1, fill, Rock 2, fill, Rock 3, fill, Rock 4, fill… ¡Tu decides!”
 Fin lección “Fills”
+
+Imprime "List@ para la siguiente lección? (responde sí o no)".
+	resp_video = guardar respuesta
+	Si resp_video == 'si'
+		continuar leccion
+	Sino resp_video == 'no'
+		imprime "Te gustaría ver un video del tema?"
+		si respuesta == 'si'
+			mostrar video
+		sino respuesta == 'no'
+			continuar leccion
+		si no
+			imprime 'respuesta invalida. debes decir si sí o si no'
+	si no
+			imprime 'respuesta invalida. debes decir si sí o si no'
+
 
 Dar lección “Examen Final”
 Nota = 0
@@ -169,19 +221,19 @@ Si resp_9 = B) Practicar lentamente, contar el tiempo y mantener consistencia
     Nota = nota + 1
 Sino Nota + 0
 
-Imprime “Cuando lees una partitura de batería y ves una “x” en la línea superior, generalmente indica:
+Imprime “Pregunta DIFÍCIL (la respuesta correcta vale 2 puntos. Ojo: si la contestas mal se te restarán 2 puntos): Cuando lees una partitura de batería y ves una “x” en la línea superior, generalmente indica:
 A) Bombo
 B) Caja
 C) Hi-hat
 D) Tom de piso”
 resp_10 = guardar respuesta
 Si resp_10 = C) Hi-hat
-    Nota = nota + 1
-Sino Nota + 0
+    Nota = nota + 2
+Sino Nota -2
 
 Mientras: 
 	Nota <= 6
     Imprime “Lo siento. Vuelve a tomar el examen para finalizar el curso”
 	repetir "Examen Final"
- Si Nota  >  6
+ Si Nota  >=  7
    EF Imprime “¡Felicitaciones resp_nom, haz finalizado correctamente el curso”
