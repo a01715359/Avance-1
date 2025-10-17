@@ -71,9 +71,10 @@ Fin lección “Segunda, tercera y cuarta partitura”
 
 Dar lección “Filis”
     Imprime “En la lección anterior aprendiste otros tres Drum keys. En esta lección veremos qué son los fills. Los fills no son más que una pequeña desviación del ritmo principal (grooves). Suelen usarse para hacer transiciones entre ritmos o simplemente para darle un toque extra a la composición.”
-    Imprime “Tarola:     0  0  0  0  0  0  0  0
-                    Hi-Hats:  x      x      x      x”
-    Imprime “Si te fijas, esta vez los Hi-Hats están debajo, lo que quiere decir que ya no usarás las manos para tocarlos, sino que está vez tu pie izquierdo ya no estará presionando el pedal siempre. Por otro lado, en este fill la tarola es la constante, para ello, empieza con la mano derecha y luego ve con la izquierda. Observa como los Hi-Hats únicamente los tocas cuando utilizas tu mano derecha, tener esto claro te ayudará con tu coordinación. Una vez domines el fill, incorpóralo con cada uno de los drum keys estudiados. Juega y crea tus propias combinaciones, como hacer cuatro veces el Rock 1, luego una vez el Rock 4 y por último el fill dos veces; o todos una vez; o hacer Rock 1, fill, Rock 2, fill, Rock 3, fill, Rock 4, fill… ¡Tu decides!”
+    Imprime “Tiempo:  1 & 2 & 3 & 4 &
+             Tom 1:       0 0     0 0
+            Tarola:   x x     x x”
+    Imprime “Una vez domines el fill, incorpóralo con cada uno de los drum keys estudiados. Juega y crea tus propias combinaciones, como hacer cuatro veces el Rock 1, luego una vez el Rock 4 y por último el fill dos veces; o todos una vez; o hacer Rock 1, fill, Rock 2, fill, Rock 3, fill, Rock 4, fill… ¡Tu decides!”
 Fin lección “Fills”
 
 Dar lección “Examen Final”
