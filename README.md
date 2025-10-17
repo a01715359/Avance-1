@@ -1,6 +1,6 @@
 # Avance-1
 Contexto:
-Mi proyecto será un curso de principiantes que enseñaría cómo tocar la batería. Explicaría paso a paso, desde lo más básico, como cuáles son las partes que conforman una batería, cómo sostener las baquetas o cómo leer las partituras de la batería; para finalmente enseñar cómo tocar la canción “Another one bites the Dust” de Queen en la batería. Pienso que sería interesante porque sería muy útil para personas que desean aprender a tocar algún instrumento pero no pueden pagar un curso o simplemente quieren buscar una forma más accesible de hacerlo: a través de un programa.
+Mi proyecto será un curso de principiantes que enseñaría cómo tocar la batería. Explicaría paso a paso, desde lo más básico, como cuáles son las partes que conforman una batería, cómo sostener las baquetas o cómo leer las partituras de la batería; para finalmente dar un examen para evaluar los conocimientos obtenidos durante el curso. Pienso que sería interesante porque sería muy útil para personas que desean aprender a tocar algún instrumento pero no pueden pagar un curso o simplemente quieren buscar una forma más accesible de hacerlo: a través de un programa.
 
 EO
 Imprime “¡Bienvenido al curso! ¿Cuál es tu nombre?”
@@ -69,11 +69,12 @@ Imprime “CONSEJO: Recuerda primero leer, comprender bien la partitura y practi
 Imprime “RETO: Cuando ya domines las cuatro, intenta unirlos, toca una octava de cada uno seguido. ¡Tu puedes!”
 Fin lección “Segunda, tercera y cuarta partitura”
 
-Dar lección “Filis”
+Dar lección “Fills”
     Imprime “En la lección anterior aprendiste otros tres Drum keys. En esta lección veremos qué son los fills. Los fills no son más que una pequeña desviación del ritmo principal (grooves). Suelen usarse para hacer transiciones entre ritmos o simplemente para darle un toque extra a la composición.”
-    Imprime “Tarola:     0  0  0  0  0  0  0  0
-                    Hi-Hats:  x      x      x      x”
-    Imprime “Si te fijas, esta vez los Hi-Hats están debajo, lo que quiere decir que ya no usarás las manos para tocarlos, sino que está vez tu pie izquierdo ya no estará presionando el pedal siempre. Por otro lado, en este fill la tarola es la constante, para ello, empieza con la mano derecha y luego ve con la izquierda. Observa como los Hi-Hats únicamente los tocas cuando utilizas tu mano derecha, tener esto claro te ayudará con tu coordinación. Una vez domines el fill, incorpóralo con cada uno de los drum keys estudiados. Juega y crea tus propias combinaciones, como hacer cuatro veces el Rock 1, luego una vez el Rock 4 y por último el fill dos veces; o todos una vez; o hacer Rock 1, fill, Rock 2, fill, Rock 3, fill, Rock 4, fill… ¡Tu decides!”
+    Imprime "Tiempo:  1 & 2 & 3 & 4 &
+             Tom 1:       0 0     0 0
+            Tarola:   x x     x x"
+    Imprime “Una vez domines el fill, incorpóralo con cada uno de los drum keys estudiados. Juega y crea tus propias combinaciones, como hacer cuatro veces el Rock 1, luego una vez el Rock 4 y por último el fill dos veces; o todos una vez; o hacer Rock 1, fill, Rock 2, fill, Rock 3, fill, Rock 4, fill… ¡Tu decides!”
 Fin lección “Fills”
 
 Dar lección “Examen Final”
