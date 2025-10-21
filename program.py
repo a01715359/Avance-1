@@ -278,8 +278,9 @@ def lecciones(leccion, video):
     """
     for i in range(len(leccion)):
         print(leccion[i])
-        option = input('List@ para la siguiente lección? (responde sí o no)\n').lower()
-        
+        texto = "\nListo para la siguiente lección? (responde sí o no)\n"
+        option = input(texto).lower()
+
         if option == 'no':
             respuesta = input("Te gustaría ver un video del tema?\n").lower()
             if respuesta == 'sí' or respuesta == 'si':
