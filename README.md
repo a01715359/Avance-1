@@ -2,9 +2,13 @@
 Contexto:
 Mi proyecto será un curso de principiantes que enseñaría cómo tocar la batería. Explicaría paso a paso, desde lo más básico, como cuáles son las partes que conforman una batería, cómo sostener las baquetas o cómo leer las partituras de la batería; para finalmente dar un examen para ver los conocimientos adquiridos. Pienso que sería interesante porque sería muy útil para personas que desean aprender a tocar algún instrumento pero no pueden pagar un curso o simplemente quieren buscar una forma más accesible de hacerlo: a través de un programa. 
 
-Para la realización de este proyecto se utilizó la biblioteca webbrowser, que sirve para acceder a URls. Esta fue utilizada con el objetivo de proporcionar ayuda extra (videos) si el usuario no entendía la explicación del curso. Primero accedí a la biblioteca importándola, luego creé una función para acceder a cada video de una lista. Por último utilicé .open() para así abrir cada URL en una nueva página en el navegador predeterminado. 
+Para la realización de este proyecto se utilizó la biblioteca webbrowser, que sirve para acceder a URls. Esta fue utilizada con el objetivo de proporcionar ayuda extra (videos) si el usuario no entendía la explicación del curso. Primero accedí a la biblioteca importándola para que Python reconozca sus funciones, luego creé una función para acceder a cada video, devolviendo cada elemento de una lista. Además, utilicé .open() para así abrir cada URL en una nueva página en el navegador predeterminado. Por último, mandé a llamar a la función creada, con la lista de los videos para que los reprodujera si el usuario los quería ver. 
+
+Asimismo, también se usó la biblioteca de time para controlar el tiempo en el programa. Comúnmente, cuando se manda a imprimir algún mensaje en consola y el programa sigue con más instrucciones, todo se ejecuta instantáneamente. Sin embargo, como quería mostrar un mensaje en pantalla antes de mostrar un video, necesitaba que el programa esperara unos segundos para que así el usuario lo pueda leer con claridad. De lo contrario, el mensaje simplemente se imprime y seguido a eso se ejecuta la siguiente línea de código, sin esperar, haciendo que el usuario no tenga tiempo de leer el mensaje completo. Para lograr esa pausa, primero, accedí a la biblioteca de time importándola para que Python reconozca sus funciones; luego dentro de mi función para la reproducción de videos, usé time.sleep() después del mensaje, que sirve para suspender la ejecución del programa por la cantidad de segundos dada (que es el número que se coloca entre los paréntesis).
 
 webbrowser — Controlador de navegador web conveniente — documentación de Python - 3.10.19. (n.d.). https://docs.python.org/es/3.10/library/webbrowser.html 
+
+time — Time access and conversions. (n.d.). Python Documentation. https://docs.python.org/3/library/time.html
 
 EO
 Imprime “¡Bienvenido al curso! ¿Cuál es tu nombre?”
