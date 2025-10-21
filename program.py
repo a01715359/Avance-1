@@ -16,11 +16,12 @@ import time
 ================== Variables y listas globales =====================================
 """
 nombre = input('¡Bienvenido al curso! ¿Cuál es tu nombre? \n')
-conocimiento = input('Hola ' + nombre + ', ¿Tienes conocimientos previos de batería?\n').lower()
+conocimiento = input('Hola ' + nombre + ', ¿Tienes conocimientos previos \
+de batería?\n').lower()
 """
 (uso de variables, listas, listas anidadas, y diccionarios)
-pregunta al usuario por su nombre y si tiene conocimientos previos de batería.
-Se definen las listas de las lecciones iniciales, 
+pregunta al usuario por su nombre y si tiene conocimientos previos de 
+batería. Se definen las listas de las lecciones iniciales, 
 en caso de que el usuario ya tenga al de conocimiento; 
 las lecciones del curso en sí;
 las listas anidadas de los videos relacionados con cada 
@@ -120,7 +121,8 @@ está arriba con una "X", ¡es un plato!\n"""]]
 """
 
 """
- (uso de listas, listas anidadas, funciones, condicionales, condicionales anidados, ciclos y ciclos anidados)
+ (uso de listas, listas anidadas, funciones, condicionales, 
+ condicionales anidados, ciclos y ciclos anidados)
  Se crea la lista de lecciones finales, cada lección es un string.
 """
 
@@ -197,7 +199,7 @@ videos = [['https://youtu.be/HqQT28ro4q8?si=e2s1JW1k4DQDrWjw'],
           ['https://youtu.be/sZx7Z_4--Yg?si=GCTWOoTrxnUNvmDD']]
 
 """
-================== preguntas del examen =======================================
+================== preguntas del examen ==================================
 """
 preguntas = {
 "¿Cuál de las siguientes partes NO forma parte de una batería \
@@ -227,28 +229,29 @@ tocar hi-hat \nD) La técnica de sostener las baquetas\n": 'b',
 Solo tocar bombo y caja sin hi-hat \nD) Improvisar sin seguir la \
 partitura\n": 'b',
 
-"En un fill de batería, es común: \nA) Mantener siempre el patrón principal \
-sin cambios \nB) Cambiar el ritmo y usar toms, caja o bombo para crear \
-variación \nC) Solo tocar hi-hat abierto \nD) Evitar tocar bombo\n": 'b',
+"En un fill de batería, es común: \nA) Mantener siempre el patrón \
+principal sin cambios \nB) Cambiar el ritmo y usar toms, caja o \
+bombo para crear variación \nC) Solo tocar hi-hat abierto \nD) \
+Evitar tocar bombo\n": 'b',
 
-"¿Cuál es la diferencia principal entre un groove y un fill? \nA) El groove \
-es el patrón principal; el fill es una transición o adorno \nB) El groove \
-es más rápido que el fill \nC) No hay diferencia \nD) El fill marca el \
-tiempo principal\n": 'a',
+"¿Cuál es la diferencia principal entre un groove y un fill? \
+\nA) El groove es el patrón principal; el fill es una transición \
+o adorno \nB) El groove es más rápido que el fill \nC) No hay \
+diferencia \nD) El fill marca el tiempo principal\n": 'a',
 
-"¿Qué debes hacer al practicar una nueva partitura de Rock? \nA) Tocar lo más \
-rápido posible desde el inicio \nB) Practicar lentamente, contar el tiempo \
-y mantener consistencia \nC) Solo tocar bombo y hi-hat \nD) Improvisar \
-sin seguir la partitura\n": 'b',
+"¿Qué debes hacer al practicar una nueva partitura de Rock? \nA) Tocar \
+lo más rápido posible desde el inicio \nB) Practicar lentamente, \
+contar el tiempo y mantener consistencia \nC) Solo tocar bombo y \
+hi-hat \nD) Improvisar sin seguir la partitura\n": 'b',
 
-"Pregunta DIFÍCIL (la respuesta correcta vale 2 puntos. Ojo: si la contestas \
-mal se te restarán 2 puntos): \nCuando lees una partitura de batería y ves \
-una “x” en la línea superior, generalmente indica: \nA) Bombo \nB) Caja \
-\nC) Hi-hat \nD) Tom de piso\n": 'c'
+"Pregunta DIFÍCIL (la respuesta correcta vale 2 puntos. Ojo: si la \
+contestas mal se te restarán 2 puntos): \nCuando lees una partitura \
+de batería y ves una “x” en la línea superior, generalmente indica: \
+\nA) Bombo \nB) Caja \nC) Hi-hat \nD) Tom de piso\n": 'c'
              }
 
 """
-======== uso de funciones ========================================
+======== uso de funciones ===================================
 """
 
 def reproducir_video(url_video):
@@ -263,13 +266,15 @@ def lecciones(leccion, video):
     """
     (uso de funciones, bucles, bucles anidados, 
     condicionales y condicionales anidados)
-    recibe: leccion (cada lección de la lista) string y video (lista de videos) string
+    recibe: leccion (cada lección de la lista) string y video 
+    (lista de videos) string
     Imprime lección y pregunta si el usuario está listo para la siguiente.
     Si responde que sí, continua con la siguiente lección; si responde que no 
     se le pregunta si desea ver un video de la lección, si responde que sí 
-    se lo muestra y le pide que luego de ver el video diga listo/a para continuar; 
-    y si responde que no continua con la siguiente lección.
-    Mientras no responda sí o no, se le indica que su respuesta es inválida.
+    se lo muestra y le pide que luego de ver el video diga listo/a 
+    para continuar; y si responde que no continua con la siguiente lección
+    Mientras no responda sí o no, se le indica que su 
+    respuesta es inválida.
     """
     for i in range(len(leccion)):
         print(leccion[i])
@@ -282,20 +287,25 @@ def lecciones(leccion, video):
                 time.sleep(3)
                 for url in video[i]:
                     reproducir_video(url)
-                respuesta = input('Cuando termines de ver el video, debes decir "listo" o "lista" para continuar\n').lower()
+                respuesta = input('Cuando termines de ver el video, debes \
+decir "listo" o "lista" para continuar\n').lower()
+                                
                 while respuesta != 'lista' and respuesta != 'listo':
-                    respuesta = input('respuesta inválida. Debes decir "listo" o "lista"\n').lower()
+                    respuesta = input('respuesta inválida. Debes decir \
+"listo" o "lista"\n').lower()
 
             else:
                 while option != 'sí' and option != 'si' and option != 'no':
-                    option = input('respuesta inválida. Debes decir si sí o si no\n').lower()
+                    option = input('respuesta inválida. Debes decir si \
+sí o si no\n').lower()
     
         else:
             while option != 'sí' and option != 'si' and option != 'no':
-                option = input('respuesta inválida. Debes decir si sí o si no\n').lower()
+                option = input('respuesta inválida. Debes decir si \
+sí o si no\n').lower()
             
 """
-========  parte principal del programa ========================================
+========  parte principal del programa ===================================
 """
 #creación de funciones para el examen final
 def examen(pregunta, respuesta_correcta):
@@ -336,13 +346,14 @@ def examen_preg_dificil(pregunta, respuesta_correcta):
 def n(question):
     """
     (uso de funciones, uso de operadores, bucles y condicionales)
-    recibe: question (diccionario con las preguntas y respuestas correctas)
-    empieza la nota en 0 y un índice en 0
+    recibe: question (diccionario con las preguntas y 
+    respuestas correctas)
+    Empieza la nota en 0 y un índice en 0
     recorre cada clave (pregunta) del diccionario
-    si el índice es 9 (pregunta difícil) llama a la función examen_preg_dificil
-    si no, llama a la función examen
-    suma la nota obtenida en cada pregunta a la nota total y aumenta 1 a índice, 
-    para recorer a la siguiente.
+    si el índice es 9 (pregunta difícil) llama a la función 
+    examen_preg_dificil si no, llama a la función examen
+    suma la nota obtenida en cada pregunta a la nota total y aumenta
+    1 a índice, para recorrer a la siguiente.
     devuelve: la nota obtenida
     """
     print("""\nEXAMEN FINAL: AHORA TENDRÁS UN EXAMEN PARA PONER
@@ -362,7 +373,8 @@ Responde las preguntas para que logres pasar el curso.\n""")
 
 
 while conocimiento != 'sí' and conocimiento != 'si' and conocimiento != 'no':
-        conocimiento = input('respuesta inválida. Debes decir si sí o si no\n').lower()
+        conocimiento = input('respuesta inválida. Debes decir si \
+                             sí o si no\n').lower()
 
 if conocimiento == 'si' or conocimiento == 'sí':
     for fila in lecciones_iniciales:
@@ -418,4 +430,5 @@ while nota <= 6:
 
 if nota >= 7:
     print("Tu puntaje final es:", nota)
-    print("¡Felicitaciones,", nombre, "haz finalizado correctamente el curso!")
+    print("¡Felicitaciones,", nombre, "haz finalizado correctamente \
+el curso!")
