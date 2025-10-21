@@ -10,18 +10,23 @@ pase el examen, se le da la oportunidad de seguirlo tomando.
 
 #bibliotecas
 import webbrowser
+import time
 
 """
-================== Lecciones iniciales  =====================================
+================== Variables y listas globales =====================================
 """
 nombre = input('¡Bienvenido al curso! ¿Cuál es tu nombre? \n')
 conocimiento = input('Hola ' + nombre + ', ¿Tienes conocimientos previos de batería?\n').lower()
 """
- (uso de variables, listas anidadas, condicionales, condicionales anidados y ciclos)
- pregunta al usuario por su nombre y si tiene conocimientos previos de batería.
- Si el usuario tiene conocimientos previos, se le pregunta si domina cada tema 
- de la lista, para así saltarlos, si no conoce ninguno se le dan todos los temas.
- Mientras no responda sí o no, se le indica que su respuesta es inválida.
+(uso de variables, listas, listas anidadas, y diccionarios)
+pregunta al usuario por su nombre y si tiene conocimientos previos de batería.
+Se definen las listas de las lecciones iniciales, 
+en caso de que el usuario ya tenga al de conocimiento; 
+las lecciones del curso en sí;
+las listas anidadas de los videos relacionados con cada 
+lección, ya que una lección tiene más de un video;
+y un diccionario con las preguntas del examen final.
+]
 """
 
 lecciones_iniciales = [
@@ -110,29 +115,6 @@ la partitura, solo tienes que mirar la altura del símbolo: si está
 abajo, es el pie; si está en el medio, es la caja o un tom; y si 
 está arriba con una "X", ¡es un plato!\n"""]]
 
-while conocimiento != 'sí' and conocimiento != 'si' and conocimiento != 'no':
-        conocimiento = input('respuesta inválida. Debes decir si sí o si no\n').lower()
-
-if conocimiento == 'si' or conocimiento == 'sí':
-    for fila in lecciones_iniciales:
-        print('Dominas el tema "' + fila[0] + '"?')
-        respuesta = input().lower()
-
-        if respuesta == 'sí' or respuesta == 'si':
-            print('Perfecto! Nos saltaremos esta lección')
-                
-        elif respuesta == 'no':
-            print('No te preocupes!')
-            print(fila[1])
-        else:
-            print('respuesta inválida. Debes decir si sí o si no')
-elif conocimiento == 'no':
-    print("No te preocupes, empezaremos desde 0")
-    i = 0
-    while i < len(lecciones_iniciales):
-        print(lecciones_iniciales[i][1])
-        i += 1
-
 """
 ================== Lecciones =====================================
 """
@@ -140,7 +122,8 @@ elif conocimiento == 'no':
 """
  (uso de listas, listas anidadas, funciones, condicionales, condicionales anidados, ciclos y ciclos anidados)
  Se crea la lista de lecciones finales, cada lección es un string.
- """
+"""
+
 lecciones_finales = [
 """Excelente! Ahora que ya sabes lo básico, 
 podemos comenzar con la primera partitura: "Rock 1"
@@ -213,101 +196,9 @@ videos = [['https://youtu.be/HqQT28ro4q8?si=e2s1JW1k4DQDrWjw'],
           'https://youtu.be/gI8IpM5hq74?si=lv5qonCrzyQAzgpb'], 
           ['https://youtu.be/sZx7Z_4--Yg?si=GCTWOoTrxnUNvmDD']]
 
-def reproducir_video(url_video):
-    """Abre un video de YouTube en el navegador web predeterminado."""
-    return webbrowser.open(url_video)
-
-def lecciones(leccion, video):
-    """
-    recibe: leccion (cada lección de la lista) string y video (lista de videos) string
-    Imprime lección y pregunta si el usuario está listo para la siguiente.
-    Si responde que sí, continua con la siguiente lección; si responde que no 
-    se le pregunta si desea ver un video de la lección, si responde que sí 
-    se lo muestra y le pide que luego de ver el video diga listo/a para continuar; 
-    y si responde que no continua con la siguiente lección.
-    Mientras no responda sí o no, se le indica que su respuesta es inválida.
-    Se llama a la función con la lista de lecciones y la lista de videos.
-    """
-    for i in range(len(leccion)):
-        print(leccion[i])
-        option = input('List@ para la siguiente lección? (responde sí o no)\n').lower()
-        
-        if option == 'sí' or option == 'si':
-            continue
-        elif option == 'no':
-            respuesta = input("Te gustaría ver un video del tema?\n").lower()
-            if respuesta == 'sí' or respuesta == 'si':
-                for url in videos[i]:
-                    reproducir_video(url)
-                respuesta = input('Cuando termines de ver el video, debes decir "listo" o "lista" para continuar\n').lower()
-                while respuesta != 'lista' and respuesta != 'listo':
-                    respuesta = input('respuesta inválida. Debes decir "listo" o "lista"\n').lower()
-
-            elif respuesta == 'no':
-                continue
-            
-            else:
-                while option != 'sí' and option != 'si' and option != 'no':
-                    option = input('respuesta inválida. Debes decir si sí o si no\n').lower()
-    
-        else:
-            while option != 'sí' and option != 'si' and option != 'no':
-                option = input('respuesta inválida. Debes decir si sí o si no\n').lower()
-                if option == 'sí' or option == 'si':
-                    continue
-                
-lecciones(lecciones_finales, videos)
-
-"""
-========  parte principal del programa ========================================
-"""
-#creación de funciones para el examen final
-def examen(pregunta, respuesta_correcta):
-    """
-    (uso de funciones y condicionales)
-    recibe: pregunta (string), respuesta_correcta (string)
-    Imprime la pregunta y recibe la respuesta del usuario.
-    Si la respuesta es correcta, imprime "¡correcto!", de lo contrario
-    imprime "¡incorrecto!"
-    devuelve: 1 si es correcta, 0 si es incorrecta.
-    """
-    respuesta = str(input(pregunta))
-    if respuesta.lower() == respuesta_correcta:
-        print("¡correcto!")
-        return 1
-    else:
-        print("¡incorrecto!")
-        return 0
-
-def examen_preg_dificil(pregunta, respuesta_correcta):
-    """
-    (uso de funciones y condicionales)
-    recibe: pregunta (string), respuesta_correcta (string)
-    Imprime la pregunta y recibe la respuesta del usuario.
-    Si la respuesta es correcta, imprime "¡correcto!", de lo contrario
-    imprime "¡incorrecto!"
-    devuelve: 2 si es correcta, -2 si es incorrecta.
-    """
-    respuesta = str(input(pregunta))
-    if respuesta.lower() == respuesta_correcta:
-        print("¡correcto!")
-        return 2
-    else:
-        print("¡incorrecto!")
-        return -2
-
-print("""\nEXAMEN FINAL: AHORA TENDRÁS UN EXAMEN PARA PONER
-A PRUEBA LO APRENDIDO DURANTE ESTE CURSO.
-Responde las preguntas para que logres pasar el curso.\n""")
-
 """
 ================== preguntas del examen =======================================
 """
-
-"""
-(uso de diccionarios)
-"""
-
 preguntas = {
 "¿Cuál de las siguientes partes NO forma parte de una batería \
 estándar? \nA) Bombo \nB) Hi-hat \nC) Maracas \nD) Tom\n": 'c',
@@ -355,10 +246,96 @@ mal se te restarán 2 puntos): \nCuando lees una partitura de batería y ves \
 una “x” en la línea superior, generalmente indica: \nA) Bombo \nB) Caja \
 \nC) Hi-hat \nD) Tom de piso\n": 'c'
              }
+
+"""
+======== uso de funciones ========================================
+"""
+
+def reproducir_video(url_video):
+    """
+    (uso de funciones)
+    recibe: url_video (string)
+    devuelve: abre un video de YouTube en el navegador 
+    web predeterminado."""
+    return webbrowser.open(url_video)
+
+def lecciones(leccion, video):
+    """
+    (uso de funciones, bucles, bucles anidados, 
+    condicionales y condicionales anidados)
+    recibe: leccion (cada lección de la lista) string y video (lista de videos) string
+    Imprime lección y pregunta si el usuario está listo para la siguiente.
+    Si responde que sí, continua con la siguiente lección; si responde que no 
+    se le pregunta si desea ver un video de la lección, si responde que sí 
+    se lo muestra y le pide que luego de ver el video diga listo/a para continuar; 
+    y si responde que no continua con la siguiente lección.
+    Mientras no responda sí o no, se le indica que su respuesta es inválida.
+    """
+    for i in range(len(leccion)):
+        print(leccion[i])
+        option = input('List@ para la siguiente lección? (responde sí o no)\n').lower()
+        
+        if option == 'no':
+            respuesta = input("Te gustaría ver un video del tema?\n").lower()
+            if respuesta == 'sí' or respuesta == 'si':
+                print("Perfecto! A continuación te mostraré el video.")
+                time.sleep(3)
+                for url in video[i]:
+                    reproducir_video(url)
+                respuesta = input('Cuando termines de ver el video, debes decir "listo" o "lista" para continuar\n').lower()
+                while respuesta != 'lista' and respuesta != 'listo':
+                    respuesta = input('respuesta inválida. Debes decir "listo" o "lista"\n').lower()
+
+            else:
+                while option != 'sí' and option != 'si' and option != 'no':
+                    option = input('respuesta inválida. Debes decir si sí o si no\n').lower()
+    
+        else:
+            while option != 'sí' and option != 'si' and option != 'no':
+                option = input('respuesta inválida. Debes decir si sí o si no\n').lower()
+            
+"""
+========  parte principal del programa ========================================
+"""
+#creación de funciones para el examen final
+def examen(pregunta, respuesta_correcta):
+    """
+    (uso de funciones y condicionales)
+    recibe: pregunta (string), respuesta_correcta (string)
+    Imprime la pregunta y recibe la respuesta del usuario.
+    Si la respuesta es igual a respuesta_correcta, imprime 
+    "¡correcto!", de lo contrario imprime "¡incorrecto!"
+    devuelve: 1 si es correcta, 0 si es incorrecta.
+    """
+    respuesta = str(input(pregunta))
+    if respuesta.lower() == respuesta_correcta:
+        print("¡correcto!")
+        return 1
+    else:
+        print("¡incorrecto!")
+        return 0
+
+def examen_preg_dificil(pregunta, respuesta_correcta):
+    """
+    (uso de funciones y condicionales)
+    recibe: pregunta (string), respuesta_correcta (string)
+    Imprime la pregunta y recibe la respuesta del usuario.
+    Si la respuesta es igual a respuesta_correcta, imprime 
+    "¡correcto!", de lo contrario imprime "¡incorrecto!"
+    devuelve: 2 si es correcta, -2 si es incorrecta.
+    """
+    respuesta = str(input(pregunta))
+    if respuesta.lower() == respuesta_correcta:
+        print("¡correcto!")
+        return 2
+    else:
+        print("¡incorrecto!")
+        return -2
+
  #calcular la nota final del examen
 def n(question):
     """
-    (uso de funciones, ciclos y condicionales)
+    (uso de funciones, uso de operadores, bucles y condicionales)
     recibe: question (diccionario con las preguntas y respuestas correctas)
     empieza la nota en 0 y un índice en 0
     recorre cada clave (pregunta) del diccionario
@@ -368,10 +345,14 @@ def n(question):
     para recorer a la siguiente.
     devuelve: la nota obtenida
     """
+    print("""\nEXAMEN FINAL: AHORA TENDRÁS UN EXAMEN PARA PONER
+A PRUEBA LO APRENDIDO DURANTE ESTE CURSO.
+Responde las preguntas para que logres pasar el curso.\n""")
+    
     nota = 0
     indice = 0
-    for clave in preguntas:
-        respuesta = preguntas[clave]
+    for clave in question:
+        respuesta = question[clave]
         if indice == 9:
             nota += examen_preg_dificil(clave, respuesta)
         else:
@@ -379,6 +360,31 @@ def n(question):
         indice += 1
     return nota
 
+
+while conocimiento != 'sí' and conocimiento != 'si' and conocimiento != 'no':
+        conocimiento = input('respuesta inválida. Debes decir si sí o si no\n').lower()
+
+if conocimiento == 'si' or conocimiento == 'sí':
+    for fila in lecciones_iniciales:
+        print('Dominas el tema "' + fila[0] + '"?')
+        respuesta = input().lower()
+
+        if respuesta == 'sí' or respuesta == 'si':
+            print('Perfecto! Nos saltaremos esta lección')
+                
+        elif respuesta == 'no':
+            print('No te preocupes!')
+            print(fila[1])
+        else:
+            print('respuesta inválida. Debes decir si sí o si no')
+elif conocimiento == 'no':
+    print("No te preocupes, empezaremos desde 0")
+    i = 0
+    while i < len(lecciones_iniciales):
+        print(lecciones_iniciales[i][1])
+        i += 1
+
+lecciones(lecciones_finales, videos)
 nota = n(preguntas)
 
 """
@@ -409,7 +415,6 @@ while nota <= 6:
     
     else:
         print('Bueno, te lo pierdes!')
-        break
 
 if nota >= 7:
     print("Tu puntaje final es:", nota)
