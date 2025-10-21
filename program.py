@@ -13,7 +13,7 @@ import webbrowser
 import time
 
 """
-================== Variables y listas globales =====================================
+================== Variables y listas globales ==========================
 """
 nombre = input('¡Bienvenido al curso! ¿Cuál es tu nombre? \n')
 conocimiento = input('Hola ' + nombre + ', ¿Tienes conocimientos previos \
