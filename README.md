@@ -59,14 +59,14 @@ Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería p
     
     Imprime "List@ para la siguiente lección? (responde sí o no)". resp_video = guardar respuesta 
 	Si resp_video == 'si' 
-		continuar leccion 
+		continuar lección 
 	else if resp_video == 'no' 
 		imprime "Te gustaría ver un video del tema?" 
 		si respuesta == 'si' 
 			mostrar video 
-			else if respuesta == 'no' 
-				continuar leccion 
-	Mientras respuesta no igual a sí o no
+		else if respuesta == 'no' 
+			continuar lección 
+	Mientras respuesta != "sí" o  != "no"
 		imprime 'respuesta invalida. debes decir si sí o si no'
 	
     Dar lección “Segunda, tercera y cuarta partitura"
@@ -107,14 +107,14 @@ Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería p
     
 	Imprime "List@ para la siguiente lección? (responde sí o no)". resp_video = guardar respuesta 
 	Si resp_video == 'si' 
-		continuar leccion 
+		continuar lección 
 	else if resp_video == 'no' 
 		imprime "Te gustaría ver un video del tema?" 
 		si respuesta == 'si' 
 			mostrar video 
-			else if respuesta == 'no' 
-				continuar leccion 
-	Mientras respuesta no igual a sí o no
+		else if respuesta == 'no' 
+			continuar lección 
+	Mientras respuesta != "sí" o  != "no"
 		imprime 'respuesta invalida. debes decir si sí o si no'
 	
     
@@ -134,24 +134,24 @@ Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería p
     
 	Imprime "List@ para la siguiente lección? (responde sí o no)". resp_video = guardar respuesta 
 	Si resp_video == 'si' 
-		continuar leccion 
+		continuar lección 
 	else if resp_video == 'no' 
 		imprime "Te gustaría ver un video del tema?" 
 		si respuesta == 'si' 
 			mostrar video 
-			else if respuesta == 'no' 
-				continuar leccion 
-	Mientras respuesta no igual a sí o no
+		else if respuesta == 'no' 
+			continuar lección 
+	Mientras respuesta != "sí" o  != "no"
 		imprime 'respuesta invalida. debes decir si sí o si no'
     
-    Dar lección “Examen Final” 
-	Nota = 0 
+    Dar lección “Examen Final"
+	Nota = 0
 	Imprime “¿Cuál de las siguientes partes NO forma parte de una batería estándar? 	A) Bombo 
 	B) Hi-hat 
 	C) Maracas 
 	D) Tom” 
 	resp_1 = guardar respuesta 
-	Si resp_1 = C) Maracas 
+	Si resp_1 == C) Maracas 
 		Nota = nota + 1 
 		Sino Nota + 0
     
@@ -161,17 +161,17 @@ Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería p
 	C) Solo se debe usar el pulgar para controlarlas 
 	D) Se deben sostener paralelas al suelo en todo momento” 
 	resp_2 = guardar respuesta 
-	Si resp_2 = B) Se deben sostener relajadas entre el pulgar y los dedos para permitir rebote 
+	Si resp_2 == B) Se deben sostener relajadas entre el pulgar y los dedos para permitir rebote 
 		Nota = nota + 1 
 		Sino Nota + 0
     
     Imprime “En una partitura de batería, el bombo se representa generalmente en:
-    A) La línea inferior del pentagrama 
+	A) La línea inferior del pentagrama 
 	B) La línea superior del pentagrama 
 	C) Las notas con corcheas 
 	D) La línea del medio”
 	resp_3 = guardar respuesta 
-	Si resp_3 = A) La línea inferior del pentagrama 
+	Si resp_3 == A) La línea inferior del pentagrama 
 		Nota = nota + 1 
 		Sino Nota + 0
     
@@ -180,16 +180,17 @@ Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería p
 	B) Un círculo en la línea inferior 
 	C) Una línea ondulada en el pentagrama
 	D) Una nota negra en la línea del medio” resp_4 = guardar respuesta 
-	Si resp_4 = A) Una “x” sobre la línea superior 
+	Si resp_4 == A) Una “x” sobre la línea superior 
 		Nota = nota + 1
 		Sino Nota + 0
     
-    Imprime “¿Qué es un fill en la batería? 	A) Un ritmo principal de la canción 
+    Imprime “¿Qué es un fill en la batería? 
+	A) Un ritmo principal de la canción 
 	B) Un pequeño solo o transición para conectar secciones 
 	C) Solo tocar hi-hat
 	D) La técnica de sostener las baquetas”
 	resp_5 = guardar respuesta 
-	Si resp_5 = B) Un pequeño solo o transición para conectar secciones 
+	Si resp_5 == B) Un pequeño solo o transición para conectar secciones 
 		Nota = nota + 1 
 		Sino Nota + 0
     
@@ -199,7 +200,7 @@ Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería p
 	C) Solo tocar bombo y caja sin hi-hat 
 	D) Improvisar sin seguir la partitura”
 	resp_6 = guardar respuesta 
-	Si resp_6 = B) El patrón rítmico principal que mantiene la canción en tiempo 
+	Si resp_6 == B) El patrón rítmico principal que mantiene la canción en tiempo 
 		Nota = nota + 1 
 		Sino Nota + 0
     
@@ -209,7 +210,7 @@ Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería p
 	C) Solo tocar hi-hat abierto 
 	D) Evitar tocar bombo” 
 	resp_7 = guardar respuesta 
-	Si resp_7 = B) Cambiar el ritmo y usar toms, caja o bombo para crear variación
+	Si resp_7 == B) Cambiar el ritmo y usar toms, caja o bombo para crear variación
 	Nota = nota + 1 
 	Sino Nota + 0
     
@@ -219,7 +220,7 @@ Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería p
 	C) No hay diferencia 
 	D) El fill marca el tiempo principal”
 	resp_8 = guardar respuesta 
-	Si resp_8 = A) El groove es el patrón principal; el fill es una transición o adorno 		Nota = nota + 1 
+	Si resp_8 == A) El groove es el patrón principal; el fill es una transición o adorno 		Nota = nota + 1 
 		Sino Nota + 0
     
     Imprime “¿Qué debes hacer al practicar una nueva partitura de Rock? 
@@ -228,7 +229,7 @@ Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería p
 	C) Solo tocar bombo y hi-hat 
 	D) Improvisar sin seguir la partitura”
 	resp_9 = guardar respuesta 
-	Si resp_9 = B) Practicar lentamente, contar el tiempo y mantener consistencia 
+	Si resp_9 == B) Practicar lentamente, contar el tiempo y mantener consistencia 
 		Nota = nota + 1 
 		Sino Nota + 0
     
@@ -238,18 +239,18 @@ Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería p
 	C) Hi-hat 
 	D) Tom de piso” 
 	resp_10 = guardar respuesta 
-	Si resp_10 = C) Hi-hat 
+	Si resp_10 == C) Hi-hat 
 		Nota = nota + 2 
 		Sino Nota -2
     
     Mientras: Nota <= 6 
 		Imprime “Lo siento. Vuelve a tomar el examen para finalizar el curso. Desea tomarlo nuevamente?"
 		decision = guardar decision
-		si decision = si
-			repetir "Examen Final" 
+		si decision == si
+			repetir "Examen Final"
 		si decision = no
 			Imprime "Bueno, te lo pierdes!"
-		Mientras decision no sea "si" o "no"
+		Mientras decision != "si" o decision != "no"
 			Imprime "Respuesta inválida. Debes decir si sí o si no"
 	Si Nota >= 7 
 	EF = Imprime “¡Felicitaciones resp_nom, haz finalizado correctamente el curso”
@@ -259,7 +260,8 @@ Descarga el código, luego, ejecútalo en tu IDE de preferencia, o bien, en term
 
 #### Referencias:
 
-webbrowser — Controlador de navegador web conveniente — documentación de Python - 3.10.19. (n.d.). https://docs.python.org/es/3.10/library/webbrowser.html
+webbrowser — Controlador de navegador web conveniente — documentación de Python - 3.10.19. (n.d.). 
+https://docs.python.org/es/3.10/library/webbrowser.html
 
 time — Time access and conversions. (n.d.). Python Documentation. https://docs.python.org/3/library/time.html
 
