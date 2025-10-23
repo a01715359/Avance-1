@@ -1,6 +1,6 @@
 # Curso de batería
-#### Contexto
-
+### Contexto
+-------
 Muchos jóvenes quisieran aprender a tocar la batería, pero ya sea por cuestiones económicas o por tiempo, no pueden pagar un curso. 
 
 Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería para principiantes. Explicando paso a paso, desde lo más básico, como cuáles son las partes que conforman una batería, cómo sostener las baquetas o cómo leer las partituras de la batería; hasta temas más complejos, como cómo tocar ciertos ritmos en la batería. Finalmente, dará un examen para ver los conocimientos adquiridos.
@@ -254,10 +254,10 @@ Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería p
 	Si Nota >= 7 
 	EF = Imprime “¡Felicitaciones resp_nom, haz finalizado correctamente el curso”
 
-##### Instrucciones
+#### Instrucciones
 Descarga el código, luego, ejecútalo en tu IDE de preferencia, o bien, en terminal.
 
-##### Referencias:
+#### Referencias:
 
 webbrowser — Controlador de navegador web conveniente — documentación de Python - 3.10.19. (n.d.). https://docs.python.org/es/3.10/library/webbrowser.html
 
