@@ -375,7 +375,7 @@ Responde las preguntas para que logres pasar el curso.\n""")
 
 while conocimiento != 'sí' and conocimiento != 'si' and conocimiento != 'no':
         conocimiento = input('respuesta inválida. Debes decir si \
-                             sí o si no\n').lower()
+sí o si no\n').lower()
 
 if conocimiento == 'si' or conocimiento == 'sí':
     for fila in lecciones_iniciales:
