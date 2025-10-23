@@ -11,23 +11,20 @@ pase el examen, se le da la oportunidad de seguirlo tomando.
 #bibliotecas
 import webbrowser
 import time
+import sys
 
 """
 ================== Variables y listas globales ==========================
 """
-nombre = input('¡Bienvenido al curso! ¿Cuál es tu nombre? \n')
-conocimiento = input('Hola ' + nombre + ', ¿Tienes conocimientos previos \
-de batería?\n').lower()
+
 """
-(uso de variables, listas, listas anidadas, y diccionarios)
-pregunta al usuario por su nombre y si tiene conocimientos previos de 
-batería. Se definen las listas de las lecciones iniciales, 
-en caso de que el usuario ya tenga al de conocimiento; 
+(uso de listas, listas anidadas, y diccionarios)
+Se definen las listas de las lecciones iniciales, 
+en caso de que el usuario ya tenga algo de conocimiento; 
 las lecciones del curso en sí;
 las listas anidadas de los videos relacionados con cada 
 lección, ya que una lección tiene más de un video;
 y un diccionario con las preguntas del examen final.
-]
 """
 
 lecciones_iniciales = [
@@ -121,8 +118,7 @@ está arriba con una "X", ¡es un plato!\n"""]]
 """
 
 """
- (uso de listas, listas anidadas, funciones, condicionales, 
- condicionales anidados, ciclos y ciclos anidados)
+ (uso de listas, listas anidadas, diccionarios)
  Se crea la lista de lecciones finales, cada lección es un string.
 """
 
@@ -253,12 +249,24 @@ de batería y ves una “x” en la línea superior, generalmente indica: \
 """
 ======== uso de funciones ===================================
 """
+def verificar_input(opcion): 
+    """
+    (uso de funciones y bucles)
+    recibe: opcion (string)
+    devuelve: opcion (string) si es 'sí', 'si' o 'no'
+    Mientras opcion no sea 'sí', 'si' o 'no', se le indica al usuario 
+    que su respuesta es inválida y se le pide que ingrese nuevamente.
+    """
+    while opcion != 'sí' and opcion != 'si' and opcion != 'no': 
+        opcion = input('respuesta inválida. Debes decir si ' +
+                       'sí o si no\n').lower() 
+    return opcion
 
 def reproducir_video(url_video):
     """
     (uso de funciones)
     recibe: url_video (string)
-    devuelve: abre un video de YouTube en el navegador 
+    devuelve: un video de YouTube en el navegador 
     web predeterminado."""
     return webbrowser.open(url_video)
 
@@ -272,7 +280,7 @@ def lecciones(leccion, video):
     Si responde que sí, continua con la siguiente lección; si responde que no 
     se le pregunta si desea ver un video de la lección, si responde que sí 
     se lo muestra y le pide que luego de ver el video diga listo/a 
-    para continuar; y si responde que no continua con la siguiente lección
+    para continuar; y si responde que no continua con la siguiente lección.
     Mientras no responda sí o no, se le indica que su 
     respuesta es inválida.
     """
@@ -280,34 +288,23 @@ def lecciones(leccion, video):
         print(leccion[i])
         texto = "\nListo para la siguiente lección? (responde sí o no)\n"
         option = input(texto).lower()
+        option = verificar_input(option)
 
         if option == 'no':
             respuesta = input("Te gustaría ver un video del tema?\n").lower()
+            respuesta = verificar_input(respuesta)
             if respuesta == 'sí' or respuesta == 'si':
                 print("Perfecto! A continuación te mostraré el video.")
                 time.sleep(3)
                 for url in video[i]:
                     reproducir_video(url)
-                respuesta = input('Cuando termines de ver el video, debes \
-decir "listo" o "lista" para continuar\n').lower()
-                                
-                while respuesta != 'lista' and respuesta != 'listo':
-                    respuesta = input('respuesta inválida. Debes decir \
-"listo" o "lista"\n').lower()
+                respuesta = input('Cuando termines de ver el video, debes' +
+                                  ' decir "listo" o "lista" para continuar\n').lower()
 
-            else:
-                while option != 'sí' and option != 'si' and option != 'no':
-                    option = input('respuesta inválida. Debes decir si \
-sí o si no\n').lower()
-    
-        else:
-            while option != 'sí' and option != 'si' and option != 'no':
-                option = input('respuesta inválida. Debes decir si \
-sí o si no\n').lower()
-            
-"""
-========  parte principal del programa ===================================
-"""
+                while respuesta != 'lista' and respuesta != 'listo':
+                    respuesta = input('respuesta inválida. Debes decir' +
+                                      ' "listo" o "lista"\n').lower()
+
 #creación de funciones para el examen final
 def examen(pregunta, respuesta_correcta):
     """
@@ -344,7 +341,7 @@ def examen_preg_dificil(pregunta, respuesta_correcta):
         return -2
 
  #calcular la nota final del examen
-def n(question):
+def nota_final(question):
     """
     (uso de funciones, uso de operadores, bucles y condicionales)
     recibe: question (diccionario con las preguntas y 
@@ -352,8 +349,8 @@ def n(question):
     Empieza la nota en 0 y un índice en 0
     recorre cada clave (pregunta) del diccionario
     si el índice es 9 (pregunta difícil) llama a la función 
-    examen_preg_dificil si no, llama a la función examen
-    suma la nota obtenida en cada pregunta a la nota total y aumenta
+    examen_preg_dificil si no, llama a la función examen.
+    Suma la nota obtenida en cada pregunta a la nota final y aumenta
     1 a índice, para recorrer a la siguiente.
     devuelve: la nota obtenida
     """
@@ -373,9 +370,27 @@ Responde las preguntas para que logres pasar el curso.\n""")
     return nota
 
 
-while conocimiento != 'sí' and conocimiento != 'si' and conocimiento != 'no':
-        conocimiento = input('respuesta inválida. Debes decir si \
-sí o si no\n').lower()
+"""
+================== parte principal del programa =====================
+"""
+"""
+(uso de condicionales, uso de booleanos, bucles y condicionales anidados)
+Le pide al usuario su nombre y si tiene conocimientos previos de batería.
+Si responde que sí, recorre la lista de lecciones iniciales y
+pregunta si domina cada tema, si responde que sí, 
+pasa a la siguiente lección, si responde que no, imprime 
+la lección correspondiente. Si responde que no a la pregunta inicial, 
+imprime todas las lecciones iniciales.
+Mientras no responda sí o no, se le indica que su respuesta es inválida.
+Luego llama a la función lecciones para imprimir las lecciones finales
+y reproducir los videos correspondientes.
+Finalmente, llama a la función nota_final para realizar el examen final
+"""
+
+nombre = input('¡Bienvenido al curso! ¿Cuál es tu nombre? \n')
+conocimiento = input('Hola ' + nombre + ', ¿Tienes conocimientos previos \
+de batería?\n').lower()
+conocimiento = verificar_input(conocimiento)
 
 if conocimiento == 'si' or conocimiento == 'sí':
     for fila in lecciones_iniciales:
@@ -383,13 +398,18 @@ if conocimiento == 'si' or conocimiento == 'sí':
         respuesta = input().lower()
 
         if respuesta == 'sí' or respuesta == 'si':
-            print('Perfecto! Nos saltaremos esta lección')
-                
+            print('Perfecto! Nos saltaremos esta lección')  
         elif respuesta == 'no':
             print('No te preocupes!')
             print(fila[1])
         else:
-            print('respuesta inválida. Debes decir si sí o si no')
+            while respuesta != 'sí' and respuesta != 'si' and respuesta != 'no':
+                respuesta = input('respuesta inválida. Debes decir si sí o si no\n').lower()
+            if respuesta == 'sí' or respuesta == 'si':
+                print('Perfecto! Nos saltaremos esta lección')
+            elif respuesta == 'no':
+                print('No te preocupes!')
+                print(fila[1])
 elif conocimiento == 'no':
     print("No te preocupes, empezaremos desde 0")
     i = 0
@@ -398,7 +418,7 @@ elif conocimiento == 'no':
         i += 1
 
 lecciones(lecciones_finales, videos)
-nota = n(preguntas)
+nota = nota_final(preguntas)
 
 """
 ================== resultado del examen =======================================
@@ -410,7 +430,7 @@ Se imprime la nota final obtenida en el examen.
 Mientras que esta sea menor o igual a 6, se le indica 
 que no ha pasado el examen y se le da la opción de volverlo a tomar.
 Si decide tomarlo nuevamente, la nota se reinicia a 0 y se llama a la 
-función n para volver a tomarlo. Si decide no tomarlo, se le indica que
+función nota_final para volver a tomarlo. Si decide no tomarlo, se le indica que
 se lo pierde.
 Si la nota es menor a 0, se convierte a 0. 
 Si la nota es mayor o igual a 7, se le indica que ha pasado el examen 
@@ -422,14 +442,15 @@ while nota <= 6:
     print("Tu puntaje final es:", nota)
     print("Lo siento. Vuelve a tomar el examen para finalizar el curso")
     decision = str(input("¿Desea tomarlo nuevamente? \n")).lower()
+    decision = verificar_input(decision)
     if decision == "si" or decision == "sí":
         nota = 0
-        nota = n(preguntas)
-    
-    else:
+        nota = nota_final(preguntas)
+    elif decision == "no":
         print('Bueno, te lo pierdes!')
+        sys.exit()
 
 if nota >= 7:
     print("Tu puntaje final es:", nota)
-    print("¡Felicitaciones,", nombre, "haz finalizado correctamente \
-el curso!")
+    print("¡Felicitaciones,", nombre, ". Has finalizado correctamente" +
+          " el curso!")
