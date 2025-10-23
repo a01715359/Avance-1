@@ -1,5 +1,5 @@
 # Curso de batería
-####Contexto
+#### Contexto
 
 Muchos jóvenes quisieran aprender a tocar la batería, pero ya sea por cuestiones económicas o por tiempo, no pueden pagar un curso. 
 
@@ -257,7 +257,7 @@ Este proyecto tiene como objetivo brindar las bases de cómo tocar la batería p
 ##### Instrucciones
 Descarga el código, luego, ejecútalo en tu IDE de preferencia, o bien, en terminal.
 
-#####Referencias:
+##### Referencias:
 
 webbrowser — Controlador de navegador web conveniente — documentación de Python - 3.10.19. (n.d.). https://docs.python.org/es/3.10/library/webbrowser.html
 
