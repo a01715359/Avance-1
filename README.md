@@ -12,6 +12,8 @@ webbrowser — Controlador de navegador web conveniente — documentación de Py
 
 time — Time access and conversions. (n.d.). Python Documentation. https://docs.python.org/3/library/time.html
 
+sys — System-specific parameters and functions. (n.d.-b). Python Documentation. https://docs.python.org/3/library/sys.html
+
 EO
 Imprime “¡Bienvenido al curso! ¿Cuál es tu nombre?”
 resp_nom = guardar nombre
