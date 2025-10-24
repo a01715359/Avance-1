@@ -14,12 +14,12 @@ import time
 import sys
 
 """
-================== Variables y listas globales ==========================
+================== Variables y listas globales ======================
 """
 
 """
 (uso de listas, listas anidadas, y diccionarios)
-Se definen las listas de las lecciones iniciales, 
+Se definen las listas de las lecciones iniciales,
 en caso de que el usuario ya tenga algo de conocimiento; 
 las lecciones del curso en sí;
 las listas anidadas de los videos relacionados con cada 
@@ -33,7 +33,7 @@ lecciones_iniciales = [
 La batería se compone principalmente de tambores, platillos y 
 herrajes (soportes y pedales):
 
-Tambores: Son el elemento principal y consisten en una membrana (parche) 
+Tambores: Son el elemento principal y consisten en una membrana (parche)
 tensada sobre un casco:
 
 - Bombo: El tambor más grande, que se toca con un pedal de pie. 
@@ -46,11 +46,11 @@ Se caracteriza por su sonido nítido y brillante, gracias a la bordona
 de alambres que tiene en la parte inferior.
 
 - Toms: Tambores que complementan el ritmo de la caja y el bombo\n"""],
-             
+
 ["""Cómo agarrar correctamente las baquetas""",
  """Lección: ¿Cómo agarrar correctamente las baquetas?
 
-1. Dónde Agarrar: El Punto de Gira
+1. Dónde Agarrar: El Punto de Giro
 Toma tu baqueta y sujétala a un tercio del final
     Es decir, no la agarres justo al final (el "mango"), ni a la mitad.
     Encuentra el punto donde la baqueta se siente equilibrada y 
@@ -195,7 +195,7 @@ videos = [['https://youtu.be/HqQT28ro4q8?si=e2s1JW1k4DQDrWjw'],
           ['https://youtu.be/sZx7Z_4--Yg?si=GCTWOoTrxnUNvmDD']]
 
 """
-================== preguntas del examen ==================================
+================== preguntas del examen =============================
 """
 preguntas = {
 "¿Cuál de las siguientes partes NO forma parte de una batería \
@@ -212,16 +212,18 @@ en: \nA) La línea inferior del pentagrama \nB) La línea superior del \
 pentagrama \nC) Las notas con corcheas \nD) La línea del medio\n": 'a',
 
 "En la lectura de partituras de batería, el hi-hat cerrado suele \
-representarse con: \nA) Una “x” sobre la línea superior \nB) Un círculo \
-en la línea inferior \nC) Una línea ondulada en el pentagrama \nD) Una \
-nota negra en la línea del medio\n": 'a',
+representarse con: \nA) Una “x” sobre la línea superior \
+\nB) Un círculo en la línea inferior \nC) Una línea ondulada en el \
+pentagrama \nD) Una nota negra en la línea del medio\n": 'a',
 
 "¿Qué es un fill en la batería? \nA) Un ritmo principal de la canción \
 \nB) Un pequeño solo o transición para conectar secciones \nC) Solo \
 tocar hi-hat \nD) La técnica de sostener las baquetas\n": 'b',
 
-"Un groove en batería se define como: \nA) Una serie de fills aleatorios \
-\nB) El patrón rítmico principal que mantiene la canción en tiempo \nC) \
+"Un groove en batería se define como: \nA) Una serie de \
+fills aleatorios \\nB) El patrón rítmico principal que \
+mantiene la canción en tiempo \nC) Solo tocar bombo y \
+caja sin hi-hat \nD) Improvisar sin seguir la \
 Solo tocar bombo y caja sin hi-hat \nD) Improvisar sin seguir la \
 partitura\n": 'b',
 
@@ -235,10 +237,11 @@ Evitar tocar bombo\n": 'b',
 o adorno \nB) El groove es más rápido que el fill \nC) No hay \
 diferencia \nD) El fill marca el tiempo principal\n": 'a',
 
-"¿Qué debes hacer al practicar una nueva partitura de Rock? \nA) Tocar \
-lo más rápido posible desde el inicio \nB) Practicar lentamente, \
-contar el tiempo y mantener consistencia \nC) Solo tocar bombo y \
-hi-hat \nD) Improvisar sin seguir la partitura\n": 'b',
+"¿Qué debes hacer al practicar una nueva partitura de Rock? \
+\nA) Tocar lo más rápido posible desde el inicio \
+\nB) Practicar lentamente, lo más rápido posible desde el inicio \
+\nC) Solo tocar bombo y hi-hat \nD) Improvisar \
+sin seguir la partitura\n": 'b',
 
 "Pregunta DIFÍCIL (la respuesta correcta vale 2 puntos. Ojo: si la \
 contestas mal se te restarán 2 puntos): \nCuando lees una partitura \
@@ -276,11 +279,12 @@ def lecciones(leccion, video):
     condicionales y condicionales anidados)
     recibe: leccion (cada lección de la lista) string y video 
     (lista de videos) string
-    Imprime lección y pregunta si el usuario está listo para la siguiente.
-    Si responde que sí, continua con la siguiente lección; si responde que no 
-    se le pregunta si desea ver un video de la lección, si responde que sí 
-    se lo muestra y le pide que luego de ver el video diga listo/a 
-    para continuar; y si responde que no continua con la siguiente lección.
+    Imprime lección y pregunta si el usuario está listo para la 
+    siguiente. Si responde que sí, continua con la siguiente lección; 
+    si responde que no se le pregunta si desea ver un video de la 
+    lección, si responde que sí se lo muestra y le pide que luego 
+    de ver el video diga listo/a para continuar; y si responde 
+    que no continua con la siguiente lección.
     Mientras no responda sí o no, se le indica que su 
     respuesta es inválida.
     """
@@ -291,15 +295,17 @@ def lecciones(leccion, video):
         option = verificar_input(option)
 
         if option == 'no':
-            respuesta = input("Te gustaría ver un video del tema?\n").lower()
+            respuesta = input("Te gustaría ver un " + 
+                              "video del tema?\n").lower()
             respuesta = verificar_input(respuesta)
             if respuesta == 'sí' or respuesta == 'si':
                 print("Perfecto! A continuación te mostraré el video.")
                 time.sleep(3)
                 for url in video[i]:
                     reproducir_video(url)
-                respuesta = input('Cuando termines de ver el video, debes' +
-                                  ' decir "listo" o "lista" para continuar\n').lower()
+                respuesta = input('Cuando termines de ver el video, ' +
+                                'debes decir "listo" o "lista"' +
+                                ' para continuar\n').lower()
 
                 while respuesta != 'lista' and respuesta != 'listo':
                     respuesta = input('respuesta inválida. Debes decir' +
@@ -369,7 +375,6 @@ Responde las preguntas para que logres pasar el curso.\n""")
         indice += 1
     return nota
 
-
 """
 ================== parte principal del programa =====================
 """
@@ -388,8 +393,8 @@ Finalmente, llama a la función nota_final para realizar el examen final
 """
 
 nombre = input('¡Bienvenido al curso! ¿Cuál es tu nombre? \n')
-conocimiento = input('Hola ' + nombre + ', ¿Tienes conocimientos previos \
-de batería?\n').lower()
+conocimiento = input('Hola ' + nombre + ', ¿Tienes conocimientos \
+previos de batería?\n').lower()
 conocimiento = verificar_input(conocimiento)
 
 if conocimiento == 'si' or conocimiento == 'sí':
@@ -398,13 +403,14 @@ if conocimiento == 'si' or conocimiento == 'sí':
         respuesta = input().lower()
 
         if respuesta == 'sí' or respuesta == 'si':
-            print('Perfecto! Nos saltaremos esta lección')  
+            print('Perfecto! Nos saltaremos esta lección')
         elif respuesta == 'no':
             print('No te preocupes!')
             print(fila[1])
         else:
-            while respuesta != 'sí' and respuesta != 'si' and respuesta != 'no':
-                respuesta = input('respuesta inválida. Debes decir si sí o si no\n').lower()
+            while respuesta not in ['sí', 'si', 'no']:
+                respuesta = input('respuesta inválida. ' +
+                                  'Debes decir si sí o si no\n').lower()
             if respuesta == 'sí' or respuesta == 'si':
                 print('Perfecto! Nos saltaremos esta lección')
             elif respuesta == 'no':
@@ -421,7 +427,7 @@ lecciones(lecciones_finales, videos)
 nota = nota_final(preguntas)
 
 """
-================== resultado del examen =======================================
+================== resultado del examen ===============================
 """
 
 """
@@ -430,8 +436,8 @@ Se imprime la nota final obtenida en el examen.
 Mientras que esta sea menor o igual a 6, se le indica 
 que no ha pasado el examen y se le da la opción de volverlo a tomar.
 Si decide tomarlo nuevamente, la nota se reinicia a 0 y se llama a la 
-función nota_final para volver a tomarlo. Si decide no tomarlo, se le indica que
-se lo pierde.
+función nota_final para volver a tomarlo. Si decide no tomarlo, se 
+le indica que se lo pierde.
 Si la nota es menor a 0, se convierte a 0. 
 Si la nota es mayor o igual a 7, se le indica que ha pasado el examen 
 y se le felicita.
