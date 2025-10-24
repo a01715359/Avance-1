@@ -1,0 +1,156 @@
+
+====================== Corrección 1 =====================
+Sub-competencia:
+        componente: plantea una situación problema que le permite aplicar y demostrar sus conocimientos de programación
+Error original: No había puesto ningún ciclo en mi algoritmo
+
+Cambio realizado: Añadí ciclos en mi algoritmo:
+    Mientras respuesta != "sí" o  != "no"
+        imprime 'respuesta invalida. debes decir si sí o si no'
+    
+Líneas de código donde se ve la corrección: 69 a 70
+
+    Mientras: Nota <= 6 
+	Imprime “Lo siento. Vuelve a tomar el examen para finalizar el curso. Desea tomarlo nuevamente?"
+	decision = guardar decision
+	si decision == si
+		repetir "Examen Final"
+	si decision = no
+		Imprime "Bueno, te lo pierdes!"
+	Mientras decision != "si" o decision != "no"
+		Imprime "Respuesta inválida. Debes decir si sí o si no"
+
+Líneas de código donde se ve la corrección: 246 a 256
+
+====================== Corrección 2 =====================
+Sub-Competencia:
+        componente: aplica estructuras condicionales para resolver un problema
+Error original: Había puesto continue para que siguiera con el resto del código:
+    
+    if option == 'sí' or option == 'si':
+            continue
+        elif option == 'no':
+        if option == 'no':
+            respuesta = input("Te gustaría ver un video del tema?\n").lower()
+            if respuesta == 'sí' or respuesta == 'si':
+                for url in videos[i]:
+                print("Perfecto! A continuación te mostraré el video.")
+                time.sleep(3)
+                for url in video[i]:
+                    reproducir_video(url)
+                respuesta = input('Cuando termines de ver el video, debes decir "listo" o "lista" para continuar\n').lower()
+                while respuesta != 'lista' and respuesta != 'listo':
+                    respuesta = input('respuesta inválida. Debes decir "listo" o "lista"\n').lower()
+
+            elif respuesta == 'no':
+                continue
+            
+            else:
+                while option != 'sí' and option != 'si' and option != 'no':
+                    option = input('respuesta inválida. Debes decir si sí o si no\n').lower()
+
+        else:
+            while option != 'sí' and option != 'si' and option != 'no':
+                option = input('respuesta inválida. Debes decir si sí o si no\n').lower()
+                if option == 'sí' or option == 'si':
+                    continue
+
+Cambio realizado: Corregí los if para no tener que usar continue:
+    if option == 'no':
+            respuesta = input("Te gustaría ver un " + 
+                              "video del tema?\n").lower()
+            respuesta = verificar_input(respuesta)
+            if respuesta == 'sí' or respuesta == 'si':
+                print("Perfecto! A continuación te mostraré el video.")
+                time.sleep(3)
+                for url in video[i]:
+                    reproducir_video(url)
+                respuesta = input('Cuando termines de ver el video, debes' +
+                                  ' decir "listo" o "lista" para continuar\n').lower()
+
+                while respuesta != 'lista' and respuesta != 'listo':
+                    respuesta = input('respuesta inválida. Debes decir' +
+                                      ' "listo" o "lista"\n').lower()
+
+Líneas de código donde se ve la corrección: 294 a 308 
+
+====================== Corrección 3 =====================
+Sub-Competencia:
+        componente: Separa el código en funciones pequeñas reusables, haciendo uso correcto de paso por parametros y return
+Error original: Antes había utilizado listas y variables globales dentro de mis funciones, en lugar de crearlas con un parámetro y mandarlas a llamar con el valor que quería:
+
+    def lecciones(leccion, video):
+        for i in range(len(leccion)):
+            print(leccion[i])
+            option = input('List@ para la siguiente lección? (responde sí o no)\n').lower()
+
+            if option == 'sí' or option == 'si':
+                continue
+            elif option == 'no':
+            if option == 'no':
+                respuesta = input("Te gustaría ver un video del tema?\n").lower()
+                if respuesta == 'sí' or respuesta == 'si':
+                    for url in videos[i]:
+                    print("Perfecto! A continuación te mostraré el video.")
+                    time.sleep(3)
+                    for url in video[i]:
+                        reproducir_video(url)
+                    respuesta = input('Cuando termines de ver el video, debes decir "listo" o "lista" para continuar\n').lower()
+                    while respuesta != 'lista' and respuesta != 'listo':
+                        respuesta = input('respuesta inválida. Debes decir "listo" o "lista"\n').lower()
+
+                elif respuesta == 'no':
+                    continue
+                
+                else:
+                    while option != 'sí' and option != 'si' and option != 'no':
+                        option = input('respuesta inválida. Debes decir si sí o si no\n').lower()
+
+            else:
+                while option != 'sí' and option != 'si' and option != 'no':
+                    option = input('respuesta inválida. Debes decir si sí o si no\n').lower()
+                    if option == 'sí' or option == 'si':
+                        continue
+
+Donde a pesar de haber definido un parámetro como "video" en la función usaba mi lista global de "videos"
+
+Cambio realizado: Generé las siguientes funciones con parámetros que solo están dentro de dicha función:
+    def lecciones(leccion, video):
+        for i in range(len(leccion)):
+            print(leccion[i])
+            texto = "\nListo para la siguiente lección? (responde sí o no)\n"
+            option = input(texto).lower()
+            option = verificar_input(option)
+
+            if option == 'no':
+                respuesta = input("Te gustaría ver un video del tema?\n").lower()
+                respuesta = verificar_input(respuesta)
+                if respuesta == 'sí' or respuesta == 'si':
+                    print("Perfecto! A continuación te mostraré el video.")
+                    time.sleep(3)
+                    for url in video[i]:
+                        reproducir_video(url)
+                    respuesta = input('Cuando termines de ver el video, debes' +
+                                    ' decir "listo" o "lista" para continuar\n').lower()
+
+                    while respuesta != 'lista' and respuesta != 'listo':
+                        respuesta = input('respuesta inválida. Debes decir' +
+                                        ' "listo" o "lista"\n').lower()
+
+Líneas de código donde se ve la corrección: 273 a 308
+
+====================== Corrección 4 =====================
+Sub-Competencia:
+        componente: El estilo cumple con las normas y estándares enunciadas en el documento de PEP 8
+
+Error original: Tenía el código muy desorganizado.
+Definía una lista y luego definía la función con la que la usaría, 
+luego la llamaba, y volvía a repetir lo mismo durante todo el código.
+
+Cambio realizado: Puse el orden correcto, colocando:
+    1. Los imports
+    2. Las variables globales (listas, listas anidadas, diccionarios)
+    3. Las funciones
+    4. El main del programa
+
+Líneas de código donde se ve la corrección: 30 a 423
